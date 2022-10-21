@@ -54,6 +54,10 @@ app.post('/auth/register', registerValidation, handleValidationErrors, UserContr
 
 // ----- Получение информации о пользователе / Авторизован или нет -----
 app.get('/auth/me',  checkAuth, UserController.getMe)
+
+
+
+app.get('/office',  checkAuth, UserController.getMe)
 // =====================================================================================================================================
 
 

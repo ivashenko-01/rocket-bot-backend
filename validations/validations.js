@@ -20,8 +20,11 @@ export const postCreateValidation = [
 ];
 
 export const podpiskaCreateValidation = [
-  body('title', 'Введите заголовок статьи').isLength({ min: 3 }).isString(),
-  body('text', 'Введите текст статьи').isLength({ min: 3 }).isString(),
-  body('tags', 'Неверный формат тэгов').optional().isString(),
-  body('imageUrl', 'Неверная ссылка на изображение').optional().isString(),
+  body('id', 'Неверная ссылка на изображение').optional().isString(),
+  body('username', 'Неверная ссылка на изображение').optional().isString(),
+  body('guildgrope', 'Неверная ссылка на изображение').optional().isString(),
+  body('lvl', 'Неверная ссылка на изображение').optional().isString(),
+  body('data', 'Неверная ссылка на изображение').optional().isString(),
+  body('availability', 'Неверная ссылка на изображение').optional().isString(),
+  body('term', 'Неверная ссылка на изображение').optional().isString(),
 ];

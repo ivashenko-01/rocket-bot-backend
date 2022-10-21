@@ -58,6 +58,7 @@ app.get('/auth/me',  checkAuth, UserController.getMe)
 
 
 app.get('/office',  checkAuth, UserController.getMe)
+app.post('/office',  loginValidation, checkAuth, UserController.login)
 // =====================================================================================================================================
 
 

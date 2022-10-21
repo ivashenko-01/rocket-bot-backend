@@ -9,9 +9,9 @@ import multer from 'multer';
 import mongoose from 'mongoose'; // Подключение библиотки для работы базы данных
 import cors from 'cors';
 
-import { registerValidation, loginValidation, postCreateValidation } from './validations/validations.js';
+import { registerValidation, loginValidation, postCreateValidation, podpiskaCreateValidation } from './validations/validations.js';
 import { handleValidationErrors, checkAuth } from './utils/index.js';
-import { UserController, PostController } from './controllers/index.js';
+import { UserController, PostController, PodpiskaController } from './controllers/index.js';
 
 
 mongoose

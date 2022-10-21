@@ -23,6 +23,11 @@ const UserSiteSchema = new mongoose.Schema({
         type: String,
         default: 'Не указали'
     },
+    viewsCount: {
+        type: Number,
+        default: 0,
+    },
+    
 }, {
     timestamps: true, 
 });

@@ -55,10 +55,6 @@ app.post('/auth/register', registerValidation, handleValidationErrors, UserContr
 // ----- Получение информации о пользователе / Авторизован или нет -----
 app.get('/auth/me',  checkAuth, UserController.getMe)
 
-
-
-app.get('/office',  checkAuth, UserController.getMe)
-app.post('/office',  loginValidation, checkAuth, UserController.login)
 // =====================================================================================================================================
 
 
@@ -80,6 +76,9 @@ app.delete('/posts/:id', checkAuth, PostController.remove);                     
 app.get('/posts/tags', PostController.getLastTags);
 app.patch('/posts/:id', checkAuth, postCreateValidation, handleValidationErrors, PostController.update); // --- Обновление статьи
 // =====================================================================================================================================
+
+
+app.get('/office/:id', PostController.getOne);                                                            // --- Получение одного пользователя
 
 
 

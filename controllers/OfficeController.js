@@ -6,39 +6,21 @@ import UserSiteModel from '../models/UserSite.js';
 
 export const getOne = async (req, res) => {
   try {
-    const postId = req.params.id;
+    const user = await UserSiteModel.findById(req.userId);
 
-    UserSiteModel.findOneAndUpdate(
-      {
-        _id: postId,
-      },
-      {
-        $inc: { viewsCount: 1 },
-      },
-      {
-        returnDocument: 'after',
-      },
-      (err, doc) => {
-        if (err) {
-          console.log(err);
-          return res.status(500).json({
-            message: 'Не удалось вернуть пользователя',
-          });
-        }
+    if (!user) {
+      return res.status(404).json({
+        message: 'Пользователь не найден',
+      });
+    }
 
-        if (!doc) {
-          return res.status(404).json({
-            message: 'Пользователь не найден',
-          });
-        }
+    const { passwordHash, ...userData } = user._doc;
 
-        res.json(doc);
-      },
-    ).populate('user');
+    res.json(userData);
   } catch (err) {
     console.log(err);
     res.status(500).json({
-      message: 'Не удалось получить пользователя',
+      message: 'Нет доступа',
     });
   }
 };

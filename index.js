@@ -78,6 +78,9 @@ app.patch('/posts/:id', checkAuth, postCreateValidation, handleValidationErrors,
 // =====================================================================================================================================
 
 
+app.post('/podpiska', checkAuth, podpiskaCreateValidation, handleValidationErrors, PodpiskaController.create);      // --- Создание подписки
+
+
 
 
 

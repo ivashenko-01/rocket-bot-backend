@@ -78,7 +78,7 @@ app.patch('/posts/:id', checkAuth, postCreateValidation, handleValidationErrors,
 // =====================================================================================================================================
 
 
-app.get('/office/:id', PostController.getOne);                                                            // --- Получение одного пользователя
+app.get('/office', PostController.getOne);                                                            // --- Получение одного пользователя
 
 
 

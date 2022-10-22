@@ -5,6 +5,7 @@ export const create = async (req, res) => {
   try {
     const doc = new PodpiskaModel({
       id: req.body.id,
+      username: req.body.username,
       guildgrope: req.body.guildgrope,
       availability: req.body.availability,
       lvl: req.body.lvl,

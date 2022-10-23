@@ -105,6 +105,15 @@ export const remove = async (req, res) => {
 };
 
 export const create = async (req, res) => {
+
+  var currentdate = new Date(); 
+  var datetime = "Время: " + currentdate.getDate() + "/"
+      + (currentdate.getMonth()+1)  + "/" 
+      + currentdate.getFullYear() + " | "  
+      + currentdate.getHours() + ":"  
+      + currentdate.getMinutes() + ":" 
+      + currentdate.getSeconds();
+
   try {
     const doc = new PostModel({
       title: req.body.title,
@@ -112,6 +121,7 @@ export const create = async (req, res) => {
       imageUrl: req.body.imageUrl,
       tags: req.body.tags.split(','),
       user: req.userId,
+      dateTime: datetime,
     });
 
     const post = await doc.save();

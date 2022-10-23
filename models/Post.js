@@ -29,6 +29,11 @@ const PostSiteSchema = new mongoose.Schema(
       required: true,
     },
     imageUrl: String,
+    dateTime: {
+      type: String,
+      default: "Не указали",
+      required: true,
+    },
   },
   {
     timestamps: true,
